@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, {
     publicPath: '/lib/', // Same as `output.publicPath` in most cases.
   }));
-  // Enable mock server.
+  // Enable mock server for local developing.
   enableMock(app, process.env.NODE_ENV === 'development');
 } else {
   app.use('/lib', express.static(path.join(__dirname, '../')));

@@ -1,10 +1,11 @@
 import * as CONSTANTS from '../constants';
 
 /**
- * [filterContacts description]
- * @param  {Array}  [contacts=[]]    [description]
- * @param  {String} [filterValue=''] [description]
- * @return {[type]}                  [description]
+ * [Basic search for filter contacts with filterValue, currently only searches
+ * the following fields: name, email, company.name]
+ * @param  {Array}  [contacts]      [contact list]
+ * @param  {String} [filterValue]   [filterValue, if empty, return the whole array]
+ * @return {Array}                  [return the filtered contact array]
  */
 export const filterContacts = (contacts = [], filterValue = '') => {
   const upperFilter = filterValue.toUpperCase();
@@ -24,10 +25,14 @@ export const filterContacts = (contacts = [], filterValue = '') => {
 };
 
 /**
- * [sortFilteredContacts description]
- * @param  {Array}  [filteredContacts=[]]               [description]
- * @param  {[type]} [sortField=CONSTANTS.SORT_FIELD_ID] [description]
- * @return {[type]}                                     [description]
+ * [sort contacts by sortField, supported sortField are the following:
+ *  id, name, email. All configured in /constants/index.js
+ * ]
+ * @param  {Array}  [filteredContacts]      [contact list]
+ * @param  {[type]} [sortField]             [field sorted by.
+ *                      should be one of the followings: id, name, email.
+ *                              Otherwise, return the original array]
+ * @return {Array}                          [sorted contact array]
  */
 export const sortFilteredContacts =
   (filteredContacts = [], sortField = CONSTANTS.SORT_FIELD_ID) => {
@@ -47,11 +52,11 @@ export const sortFilteredContacts =
   };
 
 /**
- * [summlizeContacts description]
- * @param  {Array}  [contacts=[]] [description]
- * @return {[type]}               [description]
+ * [Summarize the contacts count started with each letter of the alphabet.]
+ * @param  {Array}  [contacts]    [contact list]
+ * @return {String}               [report in a string]
  */
-export const summlizeContacts = (contacts = []) => {
+export const summarizeContacts = (contacts = []) => {
   const map = {};
   contacts.forEach((contact) => {
     if (contact.name) {

@@ -15,7 +15,7 @@ class AdminReport extends Component {
 
   onSummary() {
     const { contacts } = this.props;
-    this.setState({ summary: Utils.summlizeContacts(contacts) });
+    this.setState({ summary: Utils.summarizeContacts(contacts) });
   }
 
   render() {
