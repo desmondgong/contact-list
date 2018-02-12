@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import List, { ListItem, ListItemText } from 'material-ui/List';
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Dialog from 'material-ui/Dialog';
+import AccountIcon from 'material-ui-icons/AccountCircle';
 import classnames from 'classnames';
 import BizCard from './BizCard';
 
@@ -17,17 +18,20 @@ class ContactList extends Component {
   render() {
     const { contacts, domClass } = this.props;
     const { selectedContact, open } = this.state;
-    const className = classnames('', domClass);
+    const listClass = classnames('contact-list', domClass);
     return (<div>
-      <List>
+      <List className={listClass}>
         {contacts.map(contact =>
           (<ListItem
             key={contact.id}
             button
-            className={className}
+            className={'item'}
             onClick={() => { this.setState({ selectedContact: contact, open: true }); }}
           >
-            <ListItemText primary={contact.name} />
+            <ListItemIcon className={'icon'}>
+              <AccountIcon />
+            </ListItemIcon>
+            <ListItemText primary={contact.name} secondary={contact.email} />
           </ListItem>))}
       </List>
       <Dialog

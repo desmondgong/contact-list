@@ -20,7 +20,8 @@
     "react-redux": "4.4.5",
     "redux": "3.5.2",
     "redux-thunk": "2.1.0",
-    "material-ui": "1.0.0-beta.33"
+    "material-ui": "1.0.0-beta.33",
+    "material-ui-icons": "1.0.0-beta.17"
   },
   "devDependencies": {
     "babel-cli": "6.11.4",
