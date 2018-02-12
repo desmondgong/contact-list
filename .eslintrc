@@ -1,0 +1,10 @@
+{
+  'extends': 'airbnb',
+  'rules': {
+    'import/no-extraneous-dependencies': 0
+  },
+  'globals': {
+    'document': false,
+    'fetch': false
+  }
+}
