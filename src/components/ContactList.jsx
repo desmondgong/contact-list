@@ -36,6 +36,7 @@ class ContactList extends Component {
       </List>
       <Dialog
         open={open}
+        PaperProps={{ className: 'dialog-content-bizcard' }}
         onClose={() => { this.setState({ open: false }); }}
       >
         <BizCard contact={selectedContact} />

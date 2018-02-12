@@ -1,7 +1,6 @@
 .bizcard {
   color: white;
   background-color: black !important;
-  width: 500px;
   .info-top {
     background-color: dodgerblue;
     height: 200px;
@@ -9,4 +8,7 @@
   .info-bottom {
     margin-top: 0;
   }
+}
+.dialog-content-bizcard {
+  width: 500px;
 }
