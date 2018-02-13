@@ -34,10 +34,10 @@ export const sortFilteredContacts = sortField => (dispatch, getState) => {
   dispatch(setFilterContacts(Utils.sortFilteredContacts(filteredContacts, sortField)));
 };
 
-export const fetchContacts = () => (dispatch) => {
+export const fetchContacts = () => dispatch =>
   fetch(CONSTANTS.CONTACT_LIST_URL).then(res => new Promise((resolve, reject) => {
     const contentType = res.headers.get('content-type');
-    if ((res.status === 200 || res.status === 204) && contentType.includes('json')) {
+    if (res.status === 200 && contentType.includes('json')) {
       resolve(res.json());
     } else {
       reject(res);
@@ -49,4 +49,3 @@ export const fetchContacts = () => (dispatch) => {
     dispatch(setNotification(MESSAGES.NOTIFICATION_FETCH_CONTACTS_FAILURE));
     dispatch(setLoadingStatus(false));
   });
-};

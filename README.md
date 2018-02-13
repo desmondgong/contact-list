@@ -25,6 +25,7 @@ This application is based on the following tools/libraries:
 - UI Render: **React/Redux, SASS, Material UI**.
 - Bundler: **Webpack**.
 - Lint check: **ESlint, eslint-config-airbnb**.
+- Unit Testing: **Jasmine, Enzyme, Karma**.
 - Web Server: **Express**.
 
 ### Setup
@@ -47,7 +48,17 @@ Dev mode enables [webpack-dev-middleware](https://webpack.js.org/guides/developm
 #### Static Analysis (Eslint)
 All projects are covered with `eslint` rules to ESS standard in `eslint-config-airbnb`, [details](https://github.com/airbnb/javascript)
 
-Run `npm run check:lint` to do the lint check.
+1. Switch to top level directory.
+2. Run `npm run check:lint` to do the lint check.
+3. Review `tests/out/lint-report.html` for lint report.
+
+### Unit tests
+Specs for Unit Test all locate `tests/unit` of each package and are written in `Jasmine`, executing via `Karma` on `phantomJS`. Code coverage is run by `karma` plugins.
+
+1. Switch to top level directory.
+2. Run `npm run test:unit` to start the Unit Test.
+3. Review `tests/out/unit` for UT reports.
+4. Review `tests/out/coverage` for UT coverage reports.
 
 ---
 ## Production Mode:

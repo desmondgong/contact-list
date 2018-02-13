@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
 import Card, { CardContent } from 'material-ui/Card';
 
-const BizCard = ({ contact = {} }) => (<Card className={'bizcard'}>
+const BizCard = ({ contact }) => (<Card className={'bizcard'}>
   <CardContent>
     <Grid container direction={'column'} >
       <Grid
@@ -14,8 +14,8 @@ const BizCard = ({ contact = {} }) => (<Card className={'bizcard'}>
         alignItems={'flex-end'}
         className={'info-top'}
       >
-        <Grid item className={'name'}><h2>{contact.name}</h2></Grid>
-        <Grid item className={'company'}>{contact.company.name}</Grid>
+        <Grid item className={'name'}><h2>{contact.name || ''}</h2></Grid>
+        <Grid item className={'company'}>{contact.company ? contact.company.name : ''}</Grid>
       </Grid>
       <Grid
         item
@@ -24,8 +24,8 @@ const BizCard = ({ contact = {} }) => (<Card className={'bizcard'}>
         alignItems={'flex-end'}
         className={'info-bottom'}
       >
-        <Grid item className={'contanct'}>{`${contact.phone} | ${contact.email}`}</Grid>
-        <Grid item className={'address'}>{`${contact.address.suite}, ${contact.address.street}, ${contact.address.city}`}</Grid>
+        <Grid item className={'contact'}>{`${contact.phone || ''} | ${contact.email || ''}`}</Grid>
+        <Grid item className={'address'}>{contact.address ? `${contact.address.suite}, ${contact.address.street}, ${contact.address.city}` : ''}</Grid>
       </Grid>
     </Grid>
   </CardContent>

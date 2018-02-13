@@ -52,7 +52,7 @@ export const sortFilteredContacts =
   };
 
 /**
- * [Summarize the contacts count started with each letter of the alphabet.]
+ * [Group the contacts with the start letter, return the summary report.]
  * @param  {Array}  [contacts]    [contact list]
  * @return {String}               [report in a string]
  */

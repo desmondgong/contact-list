@@ -20,8 +20,9 @@ class AdminReport extends Component {
 
   render() {
     const { summary } = this.state;
-    return (<div>
+    return (<div className={'admin-report'}>
       <Button
+        id="report-btn"
         color="primary"
         onClick={this.onSummary}
       >
